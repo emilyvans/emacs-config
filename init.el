@@ -38,8 +38,12 @@
 
 
 (use-package eshell)
+(use-package vterm)
 (use-package counsel)
 (counsel-mode)
+
+(use-package casual)
+(casual-init)
 
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
@@ -82,6 +86,8 @@
 ;;(keymap-global-unset "<left>")
 ;;(keymap-global-unset "<right>")
 
+(global-set-key (kbd "C-x b") #'ibuffer)
+(global-set-key (kbd "C-x T") #'vterm)
 (global-set-key (kbd "C-x e") #'eglot)
 (global-set-key
  (kbd "C-x c")
