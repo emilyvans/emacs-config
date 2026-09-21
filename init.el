@@ -26,6 +26,14 @@
 (use-package irony)
 (use-package company-irony)
 (use-package magit)
+(use-package js2-mode)
+(use-package web-mode
+  :mode (
+		 ("\\.html?\\'" . web-mode)
+		 ("\\.js?\\'" . js2-mode)
+		 )
+  )
+
 
 (use-package eshell)
 (use-package counsel)
@@ -55,6 +63,10 @@
  :font "CaskaydiaCove Nerd Font"
  :height 100
  :weight 'medium)
+
+
+(use-package emmet-mode
+  :hook (web-mode . emmet-mode))
 
 (add-to-list 'default-frame-alist '(font . "CaskaydiaCove Nerd Font"))
 
