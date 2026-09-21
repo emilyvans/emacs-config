@@ -16,6 +16,8 @@
 (setq custom-file (file-name-concat user-emacs-directory "custom.el"))
 (load custom-file)
 
+(setq backup-directory-alist '(("~/.emacs_saves")))
+
 (use-package company)
 (global-company-mode)
 
