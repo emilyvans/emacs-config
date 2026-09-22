@@ -28,6 +28,7 @@
 (use-package irony)
 (use-package company-irony)
 (use-package magit)
+(use-package d2-mode)
 (use-package js2-mode)
 (use-package web-mode
   :mode (
