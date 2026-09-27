@@ -8,11 +8,11 @@
  '(custom-enabled-themes '(dracula))
  '(custom-safe-themes
    '("9c6aa7eb1bde73ba1142041e628827492bd05678df4d9097cda21b1ebcb8f8b9"
-	 default))
+     default))
  '(package-selected-packages
    '(casual casual-ibuffer company company-irony counsel d2-mode
-			dracula-theme emmet-mode irony irony-mode js2-mode magit
-			vterm web-mode))
+	    dracula-theme emmet-mode irony irony-mode js2-mode magit
+	    multi-vterm vterm web-mode))
  '(whitespace-style '(face tabs spaces space-mark tab-mark)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -16,7 +16,7 @@
 (setq custom-file (file-name-concat user-emacs-directory "custom.el"))
 (load custom-file)
 
-(setq backup-directory-alist '(("~/.emacs_saves")))
+(setq backup-directory-alist (file-name-concat user-emacs-directory ".emacs_saves/"))
 
 (use-package company)
 (global-company-mode)
@@ -28,7 +28,10 @@
 (use-package irony)
 (use-package company-irony)
 (use-package magit)
-(use-package d2-mode)
+(use-package d2-mode
+  :config (lambda ()
+			(setq d2-indent 4)
+			))
 (use-package js2-mode)
 (use-package web-mode
   :mode (
@@ -40,6 +43,7 @@
 
 (use-package eshell)
 (use-package vterm)
+(use-package multi-vterm)
 (use-package counsel)
 (counsel-mode)
 
@@ -88,7 +92,10 @@
 ;;(keymap-global-unset "<right>")
 
 (global-set-key (kbd "C-x b") #'ibuffer)
-(global-set-key (kbd "C-x T") #'vterm)
+(global-set-key (kbd "C-x C-b") #'ibuffer)
+(global-set-key (kbd "C-x f") #'counsel-find-file)
+(global-set-key (kbd "C-x C-f") #'counsel-find-file)
+(global-set-key (kbd "C-x T") #'multi-vterm)
 (global-set-key (kbd "C-x e") #'eglot)
 (global-set-key
  (kbd "C-x c")
