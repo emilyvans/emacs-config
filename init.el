@@ -18,6 +18,7 @@
 
 (setq backup-directory-alist (file-name-concat user-emacs-directory ".emacs_saves/"))
 
+(use-package eglot)
 (use-package company)
 (global-company-mode)
 
@@ -49,6 +50,11 @@
 
 (use-package casual)
 (casual-init)
+
+(use-package yasnippet)
+(use-package yasnippet-snippets)
+
+(yas-global-mode t)
 
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
@@ -91,7 +97,7 @@
 ;;(keymap-global-unset "<left>")
 ;;(keymap-global-unset "<right>")
 
-(global-set-key (kbd "C-x b") #'ibuffer)
+(global-set-key (kbd "C-x b") #'counsel-switch-buffer)
 (global-set-key (kbd "C-x C-b") #'ibuffer)
 (global-set-key (kbd "C-x f") #'counsel-find-file)
 (global-set-key (kbd "C-x C-f") #'counsel-find-file)

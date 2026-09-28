@@ -12,7 +12,7 @@
  '(package-selected-packages
    '(casual casual-ibuffer company company-irony counsel d2-mode
 	    dracula-theme emmet-mode irony irony-mode js2-mode magit
-	    multi-vterm vterm web-mode))
+	    multi-vterm vterm web-mode yasnippet yasnippet-snippets))
  '(whitespace-style '(face tabs spaces space-mark tab-mark)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
