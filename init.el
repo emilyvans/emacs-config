@@ -94,8 +94,7 @@
 
 
 (use-package emmet-mode
-  :hook ((web-mode . emmet-mode)
-  (emmet-mode . emmet-preview-mode)))
+  :hook (web-mode . emmet-mode))
 
 (add-to-list 'default-frame-alist '(font . "CaskaydiaCove Nerd Font"))
 
@@ -122,6 +121,8 @@
    (find-file (file-name-concat user-emacs-directory "init.el"))
    )
  )
+
+(keymap-set web-mode-map "C-c v" #'emmet-preview-mode)
 
 (add-hook
  'eglot-managed-mode-hook
