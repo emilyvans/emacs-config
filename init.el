@@ -18,7 +18,15 @@
 
 (setq backup-directory-alist (file-name-concat user-emacs-directory ".emacs_saves/"))
 
+(use-package exec-path-from-shell
+  :config (lambda ()
+			(exec-path-from-shell-initialize)
+			))
+
 (use-package eglot)
+(use-package mason
+  :config
+  (mason-setup))
 (use-package company)
 (global-company-mode)
 
@@ -40,6 +48,9 @@
 		 ("\\.js?\\'" . js2-mode)
 		 )
   )
+(use-package company-web)
+
+(add-to-list 'company-backends 'company-web-html)
 
 
 (use-package eshell)
@@ -83,7 +94,8 @@
 
 
 (use-package emmet-mode
-  :hook (web-mode . emmet-mode))
+  :hook ((web-mode . emmet-mode)
+  (emmet-mode . emmet-preview-mode)))
 
 (add-to-list 'default-frame-alist '(font . "CaskaydiaCove Nerd Font"))
 
