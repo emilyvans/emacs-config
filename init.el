@@ -122,7 +122,12 @@
    )
  )
 
-(keymap-set web-mode-map "C-c v" #'emmet-preview-mode)
+(add-hook
+ 'web-mode-hook
+ (lambda ()
+   (keymap-set web-mode-map "C-c v" #'emmet-preview-mode)
+   )
+ )
 
 (add-hook
  'eglot-managed-mode-hook
